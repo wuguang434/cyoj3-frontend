@@ -55,6 +55,7 @@ store.state.user?.loginUser;
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
     userName: "熊磊",
+    role: "admin",
   });
 }, 3000);
 
