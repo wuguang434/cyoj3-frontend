@@ -8,10 +8,9 @@ export default {
       userName: "未登录",
     },
   }),
-
   actions: {
     getLoginUser({ commit, state }, payload) {
-      commit("updateUser", { userName: "熊磊" });
+      commit("updateUser", { userName: "熊磊2" });
     },
   },
   mutations: {

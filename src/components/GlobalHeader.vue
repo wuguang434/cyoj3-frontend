@@ -27,7 +27,9 @@
       </a-menu>
     </a-col>
     <a-col flex="100px">
-      <div>熊磊</div>
+      <div>
+        {{ store.state.user?.loginUser?.userName ?? "未登录" }}
+      </div>
     </a-col>
   </a-row>
 </template>
@@ -35,7 +37,8 @@
 <script setup lang="ts">
 import { routes } from "../router/routes";
 import { useRoute, useRouter } from "vue-router";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useStore } from "vuex";
 
 const router = useRouter();
 
@@ -46,12 +49,22 @@ const selectedKeys = ref(["/"]);
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
+const store = useStore();
+store.state.user?.loginUser;
+
+setTimeout(() => {
+  store.dispatch("user/getLoginUser", {
+    userName: "熊磊",
+  });
+}, 3000);
 
 const doMenuClick = (key: string) => {
   router.push({
     path: key,
   });
 };
+
+// console.log(store.state.user);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

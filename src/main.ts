@@ -5,4 +5,4 @@ import "@arco-design/web-vue/dist/arco.css";
 import router from "./router";
 import store from "./store";
 
-createApp(App).use(ArcoVue).use(router).mount("#app");
+createApp(App).use(ArcoVue).use(router).use(store).mount("#app");
