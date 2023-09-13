@@ -1,6 +1,6 @@
 <template>
   <div id="userLoginView">
-    <h2 style="margin-bottom: 16px">用戶登陸</h2>
+    <h2 style="margin-bottom: 16px">用户登陆</h2>
     <a-form
       style="max-width: 480px; margin: 0 auto"
       label-align="left"
@@ -19,7 +19,7 @@
       </a-form-item>
       <a-form-item>
         <a-button type="primary" html-type="submit" style="width: 120px">
-          點擊登录
+          点击登录
         </a-button>
       </a-form-item>
     </a-form>
