@@ -4,14 +4,19 @@
       <a-layout-header class="header">
         <a-space>
           <img src="../assets/CYlogo.jpg" class="logo" />
-          <div>創耘-Programming</div>
+          <div>创宇-Programming</div>
         </a-space>
       </a-layout-header>
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
       <a-layout-footer class="footer">
-        <a href="https://yupi.icu" target="_blank"> 创耘科技 by 熊磊 </a>
+        <a
+          href="https://github.com/wuguang434/cyoj3-frontend/tree/master"
+          target="_blank"
+        >
+          创宇科技 by 熊磊
+        </a>
       </a-layout-footer>
     </a-layout>
   </div>
