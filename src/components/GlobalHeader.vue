@@ -1,11 +1,5 @@
 <template>
-  <a-row
-    id="globalHeader"
-    class="grid-demo"
-    style="margin-bottom: 16px"
-    align="center"
-    :wrap="false"
-  >
+  <a-row id="globalHeader" align="center" :wrap="false">
     <a-col flex="auto">
       <a-menu
         mode="horizontal"
@@ -42,6 +36,7 @@ import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import checkAccess from "@/access/checkAccess";
 import AccessEnum from "@/access/accessEnum";
+import ACCESS_ENUM from "@/access/accessEnum";
 
 const router = useRouter();
 const store = useStore();
@@ -70,10 +65,12 @@ router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
 
+console.log();
+
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
-    userName: "管理员:猛良",
-    userRole: AccessEnum.ADMIN,
+    userName: "鱼皮管理员",
+    userRole: ACCESS_ENUM.ADMIN,
   });
 }, 3000);
 
@@ -82,8 +79,8 @@ const doMenuClick = (key: string) => {
     path: key,
   });
 };
-
-// console.log(store.state.user);
+console.log("================================");
+console.log(store.state.user);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -98,5 +95,14 @@ const doMenuClick = (key: string) => {
 
 .logo {
   height: 48px;
+}
+
+#globalHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* 一个较高的z-index确保它在其他元素之上 */
+  background-color: #fff; /* 为了确保背景不是透明的 */
 }
 </style>
