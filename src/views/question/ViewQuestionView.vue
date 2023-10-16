@@ -32,7 +32,7 @@
               </template>
             </a-card>
           </a-tab-pane>
-          <a-tab-pane key="comment" title="评论" disabled> 评论区</a-tab-pane>
+          <a-tab-pane key="comment" title="评论"> 评论区</a-tab-pane>
           <a-tab-pane key="answer" title="答案"> 暂时无法查看答案</a-tab-pane>
         </a-tabs>
       </a-col>
@@ -77,7 +77,6 @@ import MdViewer from "@/components/MdViewer.vue";
 import {
   QuestionControllerService,
   QuestionSubmitAddRequest,
-  QuestionSubmitControllerService,
   QuestionVO,
 } from "../../../generated";
 
@@ -115,7 +114,7 @@ const doSubmit = async () => {
     return;
   }
   //todo 修改了QuestionControllerService.doQuestionSubmitUsingPost
-  const res = await QuestionSubmitControllerService.doQuestionSubmitUsingPost({
+  const res = await QuestionControllerService.doQuestionSubmitUsingPost({
     ...form.value,
     questionId: question.value.id,
   });
