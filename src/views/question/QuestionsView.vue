@@ -8,7 +8,7 @@
         <a-input-tag v-model="searchParams.tags" placeholder="请输入标签" />
       </a-form-item>
       <a-form-item>
-        <a-button type="primary" @click="doSubmit">提交</a-button>
+        <a-button type="primary" @click="doSubmit">筛选</a-button>
       </a-form-item>
     </a-form>
     <a-divider size="0" />
@@ -44,7 +44,7 @@
       <template #optional="{ record }">
         <a-space>
           <a-button type="primary" @click="toQuestionPage(record)">
-            做题
+            开始做题
           </a-button>
         </a-space>
       </template>
